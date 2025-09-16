@@ -1,6 +1,6 @@
 
 
-<p align="center"><a href="https://investbra.in" target="_blank"><img src="https://raw.githubusercontent.com/investbrainapp/investbrain/main/investbrain-logo.png" width="400" alt="Investbrain Logo"></a></p>
+<p align="center"><a href="https://investbra.in" target="_blank"><img src="https://raw.githubusercontent.com/investbrainapp/investbrain/main/investbrain-logo.png" width="400" alt="Dizzlefolio Logo"></a></p>
 
 [![GitHub Repo Stars](https://img.shields.io/github/stars/investbrainapp/investbrain?style=for-the-badge&color=%23CCCCCC)](https://github.com/investbrainapp/investbrain/)
 [![GitHub Contributors](https://img.shields.io/github/contributors/investbrainapp/investbrain?style=for-the-badge)](https://github.com/investbrainapp/investbrain/)
@@ -8,11 +8,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/investbrainapp/investbrain?style=for-the-badge)](https://hub.docker.com/r/investbrainapp/investbrain/)
 
 
-## About Investbrain
+## About Dizzlefolio
 
-Investbrain is a smart open-source investment tracker that helps you manage, track, and make informed decisions about your investments.
+Dizzlefolio is a smart open-source investment tracker that helps you manage, track, and make informed decisions about your investments.
 
-<p align="center"><a href="https://investbra.in" target="_blank"><img src="https://raw.githubusercontent.com/investbrainapp/investbrain/main/screenshot.png" width="100%" alt="Investbrain Screenshot"></a></p>
+<p align="center"><a href="https://investbra.in" target="_blank"><img src="https://raw.githubusercontent.com/investbrainapp/investbrain/main/screenshot.png" width="100%" alt="Dizzlefolio Screenshot"></a></p>
 
 ## Table of contents
 - [Under the hood](#under-the-hood)
@@ -28,11 +28,11 @@ Investbrain is a smart open-source investment tracker that helps you manage, tra
 
 ## Under the hood
 
-Investbrain is a Laravel PHP web application that has an extensible market data provider interface. Out of the box, we feature many market data providers. But intrepid developers can [create their own providers](#custom-providers)! We also offer integrations with OpenAI and Ollama for our ["chat with your holdings"](#chat-with-your-holdings) capability. Finally, of course we have robust support for i18n, a11y, and dark mode. 
+Dizzlefolio is a Laravel PHP web application that has an extensible market data provider interface. Out of the box, we feature many market data providers. But intrepid developers can [create their own providers](#custom-providers)! We also offer integrations with OpenAI and Ollama for our ["chat with your holdings"](#chat-with-your-holdings) capability. Finally, of course we have robust support for i18n, a11y, and dark mode. 
 
 ## Self hosting
 
-For ease of installation, we _highly recommend_ installing Investbrain using the provided [Docker Compose](https://github.com/investbrainapp/investbrain/blob/main/docker-compose.yml) file, which uses the official Investbrain Docker image and includes all the necessary dependencies to seamlessly build everything you need to get started quickly! 
+For ease of installation, we _highly recommend_ installing Dizzlefolio using the provided [Docker Compose](https://github.com/investbrainapp/investbrain/blob/main/docker-compose.yml) file, which uses the official Dizzlefolio Docker image and includes all the necessary dependencies to seamlessly build everything you need to get started quickly! 
 
 Before getting started, you should already have [Docker Engine](https://docs.docker.com/engine/install/) installed on your machine. 
 
@@ -52,17 +52,17 @@ Adjust the `environment` properties in the compose file to your preferences.
 
 **3. Run `docker compose up`**
 
-It might take a few minutes to pull the Docker images. But assuming everything worked as expected, you should now be able to access Investbrain in the browser by visiting:
+It might take a few minutes to pull the Docker images. But assuming everything worked as expected, you should now be able to access Dizzlefolio in the browser by visiting:
 
 ```bash
 http://localhost:8000/register
 ```
 
-Congrats! You've just installed Investbrain!
+Congrats! You've just installed Dizzlefolio!
 
 ## Chat with your holdings
 
-Investbrain offers an AI powered chat assistant that is grounded on *your* investments. This enables you to use AI as a thought partner when making investment decisions. 
+Dizzlefolio offers an AI powered chat assistant that is grounded on *your* investments. This enables you to use AI as a thought partner when making investment decisions. 
 
 When self-hosting, you can enable the chat assistant by configuring your OpenAI Secret Key and Organization ID in your [.env](https://github.com/investbrainapp/investbrain/blob/main/.env.example) file. Navigate to OpenAI to [create your keys](https://platform.openai.com/api-keys).
 
@@ -72,7 +72,7 @@ Always keep in mind the limitations of LLMs. When in doubt, consult a licensed i
 
 ## Market data providers
 
-Investbrain includes an extensible market data provider interface that allows you to retrieve stock market data from multiple providers, such as [Yahoo Finance](https://finance.yahoo.com/), [Twelve Data](https://twelvedata.com), [Finnhub](https://finnhub.io/pricing-stock-api-market-data), [Alpaca](https://alpaca.markets/), and [Alpha Vantage](https://www.alphavantage.co/support/). The interface includes a built-in fallback mechanism to ensure reliable data access, even if a provider fails.
+Dizzlefolio includes an extensible market data provider interface that allows you to retrieve stock market data from multiple providers, such as [Yahoo Finance](https://finance.yahoo.com/), [Twelve Data](https://twelvedata.com), [Finnhub](https://finnhub.io/pricing-stock-api-market-data), [Alpaca](https://alpaca.markets/), and [Alpha Vantage](https://www.alphavantage.co/support/). The interface includes a built-in fallback mechanism to ensure reliable data access, even if a provider fails.
 
 ### Configuration
 
@@ -82,7 +82,7 @@ You can specify the market data provider you want to use in your environment var
 MARKET_DATA_PROVIDER=yahoo
 ```
 
-You can also use Investbrain's built-in fallback mechanism to ensure reliable data access. If any provider fails, Investbrain will automatically attempt to retrieve data from the next available provider, continuing through your configured providers until one returns successfully.
+You can also use Dizzlefolio's built-in fallback mechanism to ensure reliable data access. If any provider fails, Dizzlefolio will automatically attempt to retrieve data from the next available provider, continuing through your configured providers until one returns successfully.
 
 Your selected providers should be listed in your environment variables. Each should be separated by a comma:
 
@@ -96,7 +96,7 @@ In the above example, Yahoo Finance will be attempted first. If Yahoo Finance fa
 
 If you wish to create your own market data provider, you can create your own implementation of the [MarketDataInterface](https://github.com/investbrainapp/investbrain/blob/main/app/Interfaces/MarketData/MarketDataInterface.php). You can refer to any existing market data implementation as an example.
 
-Once you've created your market data implementation, be sure add your custom provider to the Investbrain configuration file, under the interfaces section:
+Once you've created your market data implementation, be sure add your custom provider to the Dizzlefolio configuration file, under the interfaces section:
 
 ```php
 
@@ -117,7 +117,7 @@ Feel free to submit a PR with any custom providers you create.
 
 ## Import / Export
 
-Investbrain includes a convenient feature which allows you to maintain the portability of your portfolios and transaction data. 
+Dizzlefolio includes a convenient feature which allows you to maintain the portability of your portfolios and transaction data. 
 
 ### Import
 
@@ -125,7 +125,7 @@ Imports are "upserted" to the database. If the record does not already exist in 
 
 ### Export
 
-Exporting your portfolios and transactions is a convenient way to back-up your Investbrain data. It is also a convenient way to maintain portability of *your* data.
+Exporting your portfolios and transactions is a convenient way to back-up your Dizzlefolio data. It is also a convenient way to maintain portability of *your* data.
 
 ## Configuration
 
@@ -133,7 +133,7 @@ There are several optional configurations available when installing using the re
 
 | Option      | Description      | Default      |
 | ------------- | ------------- | ------------- |
-| APP_URL | The URL where your Investbrain installation will be accessible | http://localhost |
+| APP_URL | The URL where your Dizzlefolio installation will be accessible | http://localhost |
 | APP_PORT | The HTTP port exposed by the NGINX container | 8000 |
 | APP_KEY | Encryption key for various security-related functions | Set automatically during install |
 | MARKET_DATA_PROVIDER | The market data provider to use (either `yahoo`, `twelvedata`, `alphavantage`, `alpaca`, or `finnhub`) | yahoo |
@@ -157,7 +157,7 @@ There are several optional configurations available when installing using the re
 
 ## Updating
 
-To update Investbrain using the recommended [Docker installation](#self-hosting) method, you just need to stop the running containers:
+To update Dizzlefolio using the recommended [Docker installation](#self-hosting) method, you just need to stop the running containers:
 
 ```bash
 docker compose stop
@@ -179,7 +179,7 @@ Easy as that!
 
 ## Command line utilities
 
-Investbrain comes bundled with several helpful command line utilities to make managing your portfolios and holdings more efficient. Keep in mind these commands are extremely powerful and can make irreversable changes to your holdings.  Just to be safe, we recommend backing up your portfolios before using these commands.
+Dizzlefolio comes bundled with several helpful command line utilities to make managing your portfolios and holdings more efficient. Keep in mind these commands are extremely powerful and can make irreversable changes to your holdings.  Just to be safe, we recommend backing up your portfolios before using these commands.
 
 To run these commands, you can use `docker exec` like this:
 
@@ -207,7 +207,7 @@ If you need more details on what the command does, you can take a look at the op
 
 ## Troubleshooting
 
-If you are facing issues with Investbrain, it can be handy to monitor the application's logs:
+If you are facing issues with Dizzlefolio, it can be handy to monitor the application's logs:
 
 ```bash
 docker exec -it investbrain-app cat storage/logs/laravel.log
@@ -224,7 +224,7 @@ docker exec -it investbrain-app tail -f storage/logs/laravel.log
 
 **<summary>Application styling is broken and images are too big</summary>**
 
-If you're serving Investbrain from a DNS name (e.g. example.com), it's likely that you haven't updated the `ASSET_URL` environment yet. The URL provided there will be used to generate absolute URLs for images, JS, and CSS assets on the front end of the application.
+If you're serving Dizzlefolio from a DNS name (e.g. example.com), it's likely that you haven't updated the `ASSET_URL` environment yet. The URL provided there will be used to generate absolute URLs for images, JS, and CSS assets on the front end of the application.
 
 </details>
 
@@ -240,7 +240,7 @@ Once you whitelist `fc.yahoo.com` in pihole, your market data should begin popul
 
 ## Testing
 
-Investbrain has a robus PHPUnit test suite that creates an in-memory SQLite database and runs any queued jobs synchronously using Laravel's array driver. You can run the entire Investbrain test suite from within the Docker container by running:
+Dizzlefolio has a robus PHPUnit test suite that creates an in-memory SQLite database and runs any queued jobs synchronously using Laravel's array driver. You can run the entire Dizzlefolio test suite from within the Docker container by running:
 
 ```bash
 docker exec -it investbrain-app php artisan test
@@ -248,7 +248,7 @@ docker exec -it investbrain-app php artisan test
 
 ## Contributing
 
-We appreciate any contributions to Investbrain! Please open a pull request on our [Github repository](https://github.com/investbrainapp/investbrain). Here are some ideas for first time contributors:
+We appreciate any contributions to Dizzlefolio! Please open a pull request on our [Github repository](https://github.com/investbrainapp/investbrain). Here are some ideas for first time contributors:
 
 - Improve our documentation
 - Create new market data providers
@@ -260,12 +260,12 @@ When you submit a contribution, don't forget to include passing tests with your 
 
 ## Code of Conduct
 
-We ask that you be kind and polite when interacting with the Investbrain community. 
+We ask that you be kind and polite when interacting with the Dizzlefolio community. 
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Investbrain, please submit your report via [Github](https://github.com/investbrainapp/investbrain/security/advisories/new). All security vulnerabilities will be promptly addressed. We ask that you keep any suspected vulnerabilities private and confidential until they have been appropriately addressed.
+If you discover a security vulnerability within Dizzlefolio, please submit your report via [Github](https://github.com/investbrainapp/investbrain/security/advisories/new). All security vulnerabilities will be promptly addressed. We ask that you keep any suspected vulnerabilities private and confidential until they have been appropriately addressed.
 
 ## License
 
-Investbrain is open-sourced software licensed under the [CC-BY-NC 4.0](https://github.com/investbrainapp/investbrain?tab=License-1-ov-file).
+Dizzlefolio is open-sourced software licensed under the [CC-BY-NC 4.0](https://github.com/investbrainapp/investbrain?tab=License-1-ov-file).
