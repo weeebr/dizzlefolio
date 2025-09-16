@@ -21,6 +21,7 @@ services:
       QUEUE_CONNECTION: redis
       CACHE_STORE: redis
       REDIS_HOST: investbrain-redis
+      REDIS_CLIENT: predis
     volumes:
       - investbrain-storage:/var/app/storage # You can use a volume...
       # - /path/to/storage:/var/app/storage:delegated # ...or you can use a path on host
