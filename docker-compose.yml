@@ -8,9 +8,9 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - 8000:80
+      - 8100:80
     environment: # You can either use these properties OR an .env file. Do not use both!
-      APP_URL: "http://localhost:8000"
+      APP_URL: "http://localhost:8100"
       DB_CONNECTION: pgsql
       DB_HOST: investbrain-pgsql
       DB_PORT: 5432
@@ -22,7 +22,7 @@ services:
       CACHE_STORE: redis
       REDIS_HOST: investbrain-redis
     volumes:
-      - investbrain-storage:/var/app/storage # You can use a volume... 
+      - investbrain-storage:/var/app/storage # You can use a volume...
       # - /path/to/storage:/var/app/storage:delegated # ...or you can use a path on host
     depends_on:
       - pgsql
@@ -44,8 +44,6 @@ services:
     image: postgres:15-alpine
     container_name: investbrain-pgsql
     restart: unless-stopped
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_DB: ${DB_DATABASE:-investbrain}
       POSTGRES_USER: ${DB_USERNAME:-investbrain}
